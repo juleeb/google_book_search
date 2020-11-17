@@ -8,8 +8,11 @@ module.exports = {
       .sort({ date: -1 })
       .then(dbModel => {
         console.log(dbModel)
-        res.json(dbModel)})
-      .catch(err => res.status(422).json(err));
+        //res.json(dbModel)
+      })
+      .catch(err => {
+        console.log(err)
+        res.status(422).json(err)});
   },
   findById: function(req, res) {
     db.Book
