@@ -8,7 +8,7 @@ module.exports = {
       .sort({ date: -1 })
       .then(dbModel => {
         console.log(dbModel)
-        //res.json(dbModel)
+        res.json(dbModel)
       })
       .catch(err => {
         console.log(err)
