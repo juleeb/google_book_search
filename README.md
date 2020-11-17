@@ -1,10 +1,10 @@
-#google_book_search
+google_book_search
 
-##About the project:
+About the project:
 
 React application for google books search to search for book and save book.
 
-##Description of project:
+Description of project:
 
 -React
 
