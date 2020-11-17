@@ -20,6 +20,7 @@ class Saved extends Component {
   getBooks = () => {
     axios.get("/api/books")
       .then(res => {
+        console.log(res)
         this.setState({ savedBooks: res.data })
       })
       .catch((err => console.log(err)))
