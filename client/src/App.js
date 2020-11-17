@@ -1,20 +1,40 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Saved from "./pages/Saved";
+import Search from "./pages/Search";
+import Nav from "./components/Nav";
+import { Container} from "./components/Grid";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Nav/>
+        <Router>
+          <Container>
+          <Container
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnVisibilityChange
+            draggable={false}
+            pauseOnHover
+          />
+            <Switch>
+              <Route exact path="/" component={Search} />
+              <Route path="/bookshelf" component={Saved} />
+              <Route exact path="/books/:id" component={null} />
+              <Route component={null} />
+            </Switch>
+          </Container>
+        </Router>
       </div>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
-    </div>
-  );
+    );
+  }
 }
-
 
 export default App;
